@@ -10,7 +10,7 @@ The following is a flow chart of the service.<br/>
 ----------------------------------------------------
 
 Full functionality is as follows: <br/>
-
+![hw sw 구성도](https://user-images.githubusercontent.com/66713459/104155739-27068e00-542b-11eb-98c7-e9b6f5f00015.png) <br/>
 ||Contents|Explanation|
 |:---:|:---:|:---:|
 |SW|Collecting data for train and test|Image crawling for crops to be classified and direct collection of necessary data|
@@ -22,10 +22,5 @@ Full functionality is as follows: <br/>
 ----------------------------------------------------
 The actual screen used is as follows. <br/>
 It uses Django, an open source web application framework written in Python. <br/>
-
-
-
-
-
-
+![실제화면](https://user-images.githubusercontent.com/66713459/104155742-28d05180-542b-11eb-9fb7-b97882a516d5.png) <br/>
 This service is useful when growing early crops. I am developing services such as condition recognition and problem recognition of crops, and I will follow up when the development is completed.
