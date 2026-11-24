@@ -1,26 +1,32 @@
-# Services for operating small-scale in-house smart farms
+# Django Smart Farm
 
-This service is a service developed to help those who run small smart farms in their homes.<br/>
-I used image recognition technology using MobileNet, and the service was developed based on an inference model.<br/>
-The following is a flow chart of the service.<br/>
+집에서 작은 스마트팜을 운영할 때 도움이 되도록 만든 서비스입니다. MobileNet으로 작물 이미지를 인식하고, 라즈베리 파이로 집 안의 온도와 습도를 확인할 수 있도록 구성했습니다. 웹 화면은 Django와 Bootstrap으로 만들었습니다.
 
-![서비스 흐름도1](https://user-images.githubusercontent.com/66713459/104153835-b8273600-5426-11eb-8e69-dddc914f1a4d.png) <br/>
-![서비스 흐름도2](https://user-images.githubusercontent.com/66713459/104153844-be1d1700-5426-11eb-9857-ec13e07ce0b2.png) <br/>
+## 서비스 흐름
 
-----------------------------------------------------
+전체 흐름은 아래 그림에서 확인하실 수 있습니다.
 
-Full functionality is as follows: <br/>
-![hw sw 구성도](https://user-images.githubusercontent.com/66713459/104155739-27068e00-542b-11eb-98c7-e9b6f5f00015.png) <br/>
-||Contents|Explanation|
-|:---:|:---:|:---:|
-|SW|Collecting data for train and test|Image crawling for crops to be classified and direct collection of necessary data|
-|SW|Data learning through deep learning|Crawling and learning directly collected image data through MobileNet|
-|SW|Web application UI configuration|Develope service by using Bootstrap and Django|
-|SW|Build a database server|Build an AWS EC2 database server|
-|SW|Raspberry Pi and database linkage|Transfer the measured temperature and humidity of the house to the database|
-|HW|Understanding user environment using Raspberry Pi|Measuring temperature and humidity at home using IoT equipment|
-----------------------------------------------------
-The actual screen used is as follows. <br/>
-It uses Django, an open source web application framework written in Python. <br/>
-![실제화면](https://user-images.githubusercontent.com/66713459/104155742-28d05180-542b-11eb-9fb7-b97882a516d5.png) <br/>
-This service is useful when growing early crops. I am developing services such as condition recognition and problem recognition of crops, and I will follow up when the development is completed.
+![서비스 흐름도1](https://user-images.githubusercontent.com/66713459/104153835-b8273600-5426-11eb-8e69-dddc914f1a4d.png)
+
+![서비스 흐름도2](https://user-images.githubusercontent.com/66713459/104153844-be1d1700-5426-11eb-9857-ec13e07ce0b2.png)
+
+## 주요 기능과 구성
+
+![하드웨어 및 소프트웨어 구성도](https://user-images.githubusercontent.com/66713459/104155739-27068e00-542b-11eb-98c7-e9b6f5f00015.png)
+
+| 구분 | 기능 | 설명 |
+| --- | --- | --- |
+| SW | 학습·테스트 데이터 수집 | 분류할 작물 이미지를 크롤링하고 필요한 데이터를 직접 수집했습니다. |
+| SW | 이미지 학습 | 수집한 이미지 데이터를 MobileNet으로 학습했습니다. |
+| SW | 웹 화면 | Django와 Bootstrap으로 서비스 화면을 만들었습니다. |
+| SW | 데이터베이스 | AWS EC2에 데이터베이스 서버를 구성했습니다. |
+| SW | 센서 데이터 연동 | 라즈베리 파이에서 측정한 온도와 습도를 데이터베이스로 전달합니다. |
+| HW | 온도·습도 측정 | 라즈베리 파이와 IoT 장비로 집 안의 환경을 측정합니다. |
+
+## 실제 화면
+
+![실제 화면](https://user-images.githubusercontent.com/66713459/104155742-28d05180-542b-11eb-9fb7-b97882a516d5.png)
+
+## 개발 범위
+
+초기 작물을 키울 때 활용하는 것을 목표로 했습니다. 기존 문서에서 작물 상태와 이상 여부 인식은 추가 개발 항목으로 소개한 부분이라, 완료된 기능과는 구분해 주세요.
